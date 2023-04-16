@@ -45,6 +45,7 @@
                     move_uploaded_file($_FILES["images_4"]["tmp_name"], $target_file4);
 
                     $sql = "INSERT INTO product (name_product,id_category,quantity_product,old_price_product,new_price_product,info_product,image_product,images_2,images_3,images_4,screen,type,front_camera,rear_camera,cpu,ram,rom,sdcard,battery) VALUES ('$name_product', '$id_category', '$quantity_product', '$old_price_product', '$new_price_product', '$info_product', '$image_product', '$images_2', '$images_3', '$images_4', '$screen', '$type', '$front_camera', '$rear_camera', '$cpu', '$ram', '$rom', '$sdcard', '$battery')";
+                    echo $sql;
                     if (execute($sql)) {
                         $thongbao = "<h6 style='color: green;'>Thêm thành công</h6>";
                     } else {
@@ -118,7 +119,6 @@
                             $error = "<h6 style='color: green;'>Sửa thất bại</h6>";
                         }
                     }
-
                 } else {
                     $error = "<h6 style='color: red; font-size='16px'>Không được để rỗng !</h6>";
                 }

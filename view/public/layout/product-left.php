@@ -20,6 +20,11 @@
                         <input type="text" class="form-control" placeholder="Nhập tên sản phẩm" style="width:100%; margin-right: 6px;" name="key">
                         <button type="submit" name="search" class="btn btn-default">Tìm</button>
                     </form>
+                    <?php
+                        if($errorSearch) {
+                            echo '<p style="font-size: 16px; color: red; padding-top: 12px;">Không được để trống!</p>';
+                        }
+                    ?>
                 </div>
                 <div class="box" style="border: 1px solid #eeeeee; margin-top: 30px; border-radius: 5px;padding: 15px;">
                     <u><h4 style="text-align: center;">Khoảng giá</h4></u>

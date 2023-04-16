@@ -1,6 +1,6 @@
 <div class="container">
         <div class="row" style="margin: 50px auto;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15154.090611810905!2d106.00448!3d18.2776915!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1635904006446!5m2!1sen!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1557.3131610186756!2d108.24837889623096!3d15.97640267883965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142108997dc971f%3A0x1295cb3d313469c9!2sVietnam%20-%20Korea%20University%20of%20Information%20and%20Communication%20Technology.!5e0!3m2!1sen!2sus!4v1681638946438!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="row">
             <div class="col-md-4 col-xs-4">

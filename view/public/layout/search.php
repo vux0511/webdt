@@ -5,12 +5,27 @@
                 require_once ('view/public/layout/product-left.php');
             ?>
             <div class="col-sm-9" style="padding-right: 0px;">
-                <h3 style="color: #ff523b; margin-top: 0px; text-align: center; margin-bottom: 30px;"><ins>Tất Cả Sản
-                        Phẩm</ins></h3>
+                <h3 style="color: #ff523b; margin-top: 0px; text-align: center; margin-bottom: 30px;">
+                    <?php
+                        if($alert) {
+                            ?>
+                            <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/a60759ad1dabe909c46a817ecbf71878.png" alt="Không tìm thấy kết quả nào" width="130px">
+                            <br>
+                            <p style="color: rgb(0 0 0 / 71%); font-size: 2rem;"><?php echo $alert ?></p>
+                            <p style="color: rgba(0,0,0,.54);; font-size: 2.2rem;"><?php echo $alert2 ?></p>
+                        <?php
+                            } else {
+                                echo "Tất Cả Các Sản Phẩm";
+                        }
+                        if( $errorSearch ) { ?>
+                            <?php
+                        }
+                    ?>
+                </h3>
                 <?php
                     if (isset($_GET['category'])) {
                         $id_category = $_GET['category'];
-                        $sql = "SELECT * FROM product WHERE id_category = '$id_category' LIMIT 8";
+                        $sql = "SELECT * FROM product WHERE id_category = '$id_category'";
                         $loadProductCategory = loadProductCategory($sql);
                         foreach ($loadProductCategory as $value) {
                 ?>
@@ -41,7 +56,6 @@
                     } elseif (isset($searchProduct)) {
                         foreach ($searchProduct as $searchProduct) {
                     ?>
-
                         <div class="col-md-3 col-xs-6">
                             <div class="card box-shadow">
                                 <img src="view/images/product/<?php echo $searchProduct['image_product'] ?>" style="width:100%; max-height: 159.11px; width: 165px;">

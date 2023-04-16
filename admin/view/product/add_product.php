@@ -18,19 +18,6 @@
             <label for="exampleFormControlInput1">Tên SP</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="name_product">
         </div>
-
-
-        <!-- <div class="form-group">
-            <label for="exampleFormControlInput1">HOT</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" name="hot_product">
-        </div> -->
-        <!-- <div class="form-group">
-            <label for="exampleFormControlSelect1">Sản Phẩm HOT</label>
-            <select class="form-control" id="exampleFormControlSelect1" name="hot_product">
-                <option value='0'>Không</option>
-                <option value="1">HOT</option>
-            </select>
-        </div> -->
         <div class="row">
             <div class="col-md-3">
                 <div class="form-group">

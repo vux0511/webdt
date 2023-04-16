@@ -1,12 +1,9 @@
 <!-- START PRODUCT HOT + NEW  -->
 <?php
     $sotin1trang = 1008;
-    if (isset($_GET["page"]))
-    {
+    if (isset($_GET["page"])) {
         $page = $_GET['page'];
-    }
-    else
-    {
+    } else {
         $page = 1;
     }
 ?>
@@ -16,7 +13,7 @@
                 require_once ('view/public/layout/product-left.php');
             ?>
             <div class="col-sm-9" style="padding-right: 0px;">
-                <h3 style="color: #ff523b; margin-top: 0px; text-align: center; margin-bottom: 30px;"><ins>
+                <h3 style="color: #ff523b; margin-top: 0px; text-align: center; margin-bottom: 30px;">
                     <?php 
                         if($_GET['category']) {
                             $id_category = $_GET['category'];
@@ -29,7 +26,7 @@
                             echo "Tất Cả Các Sản Phẩm";
                         }
                     ?>
-                </ins></h3>
+                </h3>
                 <?php
                     if (isset($_GET['category'])) {
                         $id_category = $_GET['category'];
