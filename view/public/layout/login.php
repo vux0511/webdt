@@ -577,7 +577,6 @@
                         <div class="authfy-panel panel-login text-center active">
                             <div class="authfy-heading">
                                 <h3 class="auth-title">Đăng Nhập Tài Khoản</h3>
-                                <p style="font-size: 18px; font-weight: 500;">Đăng nhập để đặt hàng !</p>
                                 <p>Không có tài khoản ? <a class="lnk-toggler" data-panel=".panel-signup" href="index.php?controller=register">Đăng kí !</a></p>
                                 <?php
                                     if (isset($error)) {
@@ -686,3 +685,4 @@
         <!-- ./row -->
     </div>
     <!-- Form Login -->
+    

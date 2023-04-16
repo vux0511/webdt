@@ -104,12 +104,12 @@
                     <!-- dropdown icon login -->
                     <div class="dropdown" style="color: #fff;">
                                 <li style="color: #fff;">
-                                    <button class="dropbtn"><i class="fas fa-user"></i></button>
+                                    <?php
+                                        if (isset($_COOKIE['login'])) {
+                                    ?>
+                                    <button class="dropbtn">Hi <?php echo $_COOKIE['login'] ?>
+                                    </button>
                                     <div class="dropdown-content" style="font-size: 16px;color: #fff;padding: 7px 0px;text-decoration: none;text-align: center;">
-                                        <?php
-                                            if (isset($_COOKIE['login'])) {
-                                        ?>
-
                                             <a href="index.php?controller=account&act=account" style="font-size: 16px;">Cập nhật tài khoản</a>
                                             <hr style="margin: 0px;">
                                             <a href="index.php?controller=account&act=update_password" style="font-size: 16px;">Đổi mật khẩu</a>
@@ -117,10 +117,10 @@
                                             <a href="index.php?controller=logout" style="font-size: 16px;">Đăng xuất</a>
                                         <?php
                                             } else {
-                                                echo '<a href="index.php?controller=login">Đăng nhập</a>
-                                                    <hr style="padding: 0px; margin: 0px;font-size: 26px;">
-                                                    <a href="index.php?controller=register">Đăng ký</a>
-                                                    <hr style="padding: 0px; margin: 0px;">';
+                                                echo '<a href="index.php?controller=login">
+                                                    <button class="dropbtn">Đăng Nhập</button></a>'
+                                                    
+                                                    ;
                                             }
                                         ?>
                                     </div>

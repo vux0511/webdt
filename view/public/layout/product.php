@@ -1,6 +1,6 @@
 <!-- START PRODUCT HOT + NEW  -->
 <?php
-    $sotin1trang = 8;
+    $sotin1trang = 1008;
     if (isset($_GET["page"]))
     {
         $page = $_GET['page'];
@@ -16,7 +16,20 @@
                 require_once ('view/public/layout/product-left.php');
             ?>
             <div class="col-sm-9" style="padding-right: 0px;">
-                <h3 style="color: #ff523b; margin-top: 0px; text-align: center; margin-bottom: 30px;"><ins>Tất Cả Sản Phẩm</ins></h3>
+                <h3 style="color: #ff523b; margin-top: 0px; text-align: center; margin-bottom: 30px;"><ins>
+                    <?php 
+                        if($_GET['category']) {
+                            $id_category = $_GET['category'];
+                            $sql_search_id_category = "SELECT * FROM category WHERE id_category = $id_category";
+                            $select_name = selectAll($sql_search_id_category);
+                            foreach ($select_name as $value) {
+                                echo $value['name_category'];
+                            }
+                        } else {
+                            echo "Tất Cả Các Sản Phẩm";
+                        }
+                    ?>
+                </ins></h3>
                 <?php
                     if (isset($_GET['category'])) {
                         $id_category = $_GET['category'];
@@ -61,11 +74,11 @@
                     </div>
                 <?php
                         }
-                        for ($t=1; $t<=$sotrang ; $t++) {
-                            echo "<ul class='pagination' style='right:100%'>
-                                    <li><a href='index.php?controller=product&category=".$id_category."&page=$t'>Trang $t</a></li>
-                                </ul>";
-                        }
+                        // for ($t=1; $t<=$sotrang ; $t++) {
+                        //     echo "<ul class='pagination' style='right:100%'>
+                        //             <li><a href='index.php?controller=product&category=".$id_category."&page=$t'>Trang $t</a></li>
+                        //         </ul>";
+                        // }
                     }
                     elseif (isset($_GET['price1'])) {
                         $sql = "SELECT * FROM product WHERE new_price_product <= 3000000";
@@ -259,7 +272,7 @@
                         <?php
                         }
                     }
-                     else {
+                    else {
                         $sql = "SELECT count(*) FROM product";
                         $tongsotin = selectRow($sql);
                         $sotrang = ceil($tongsotin / $sotin1trang);
@@ -300,12 +313,12 @@
                     </div>
                 <?php
                         }
-                    for ($t=1; $t<=$sotrang ; $t++) {
-                        echo "
-                            <ul class='pagination' style='right:100%'>
-                                <li><a href='index.php?controller=product&page=$t' style='color: ff523b;'>Trang $t</a></li>
-                            </ul>";
-                        }
+                    // for ($t=1; $t<=$sotrang ; $t++) {
+                    //     echo "
+                    //         <ul class='pagination' style='right:100%'>
+                    //             <li><a href='index.php?controller=product&page=$t' style='color: ff523b;'>Trang $t</a></li>
+                    //         </ul>";
+                    //     }
                     }
                 ?>
             </div>

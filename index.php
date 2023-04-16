@@ -1,8 +1,5 @@
 <?php
-    
-    <div class="devv">
-    hgygyguygyghjgjgutuy
-    jii</div>
+
     include "model/DBconfig.php";
 
     session_start();
