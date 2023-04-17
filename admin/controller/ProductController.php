@@ -11,6 +11,7 @@
 
     switch ($act) {
         case 'add_product': {
+
             if (isset($_POST['add_product'])) {
                 $name_product = $_POST['name_product'];
                 $id_category = $_POST['id_category'];
@@ -45,7 +46,6 @@
                     move_uploaded_file($_FILES["images_4"]["tmp_name"], $target_file4);
 
                     $sql = "INSERT INTO product (name_product,id_category,quantity_product,old_price_product,new_price_product,info_product,image_product,images_2,images_3,images_4,screen,type,front_camera,rear_camera,cpu,ram,rom,sdcard,battery) VALUES ('$name_product', '$id_category', '$quantity_product', '$old_price_product', '$new_price_product', '$info_product', '$image_product', '$images_2', '$images_3', '$images_4', '$screen', '$type', '$front_camera', '$rear_camera', '$cpu', '$ram', '$rom', '$sdcard', '$battery')";
-                    echo $sql;
                     if (execute($sql)) {
                         $thongbao = "<h6 style='color: green;'>Thêm thành công</h6>";
                     } else {
@@ -62,6 +62,21 @@
             break;
         }
         case 'edit_product': {
+            if (isset($_GET['id_product'])) {
+                $id_product = $_GET['id_product'];
+                $sql = "SELECT * FROM product WHERE id_product = '$id_product'";
+                $data_product_edit = selectOne($sql);
+                $sql = "SELECT * FROM category";
+                $data_category = selectAll($sql);
+    
+                if ($data_product_edit) {
+                    $image_product = $data_product_edit['image_product'];
+                    $images_2 = $data_product_edit['images_2'];
+                    $images_3 = $data_product_edit['images_3'];
+                    $images_4 = $data_product_edit['images_4'];
+                }
+            }
+            
             if (isset($_POST['edit_product'])) {
                 $id_product = $_GET['id_product'];
                 $name_product = $_POST['name_product'];
@@ -70,7 +85,6 @@
                 $old_price_product = $_POST['old_price_product'];
                 $new_price_product = $_POST['new_price_product'];
                 $info_product = $_POST['info_product'];
-
                 $screen = $_POST['screen'];
                 $type = $_POST['type'];
                 $front_camera = $_POST['front_camera'];
@@ -80,16 +94,22 @@
                 $rom = $_POST['rom'];
                 $sdcard = $_POST['sdcard'];
                 $battery = $_POST['battery'];
-
                 $image_product = $_FILES['image_product']['name'];
                 $images_2 = $_FILES['images_2']['name'];
                 $images_3 = $_FILES['images_3']['name'];
                 $images_4 = $_FILES['images_4']['name'];
 
-                if ($name_product != '' || $id_category != '' || $quantity_product != '' || $old_price_product != '' || $new_price_product != '') {
+                if ($image_product == '' ) 
+                    $image_product = $data_product_edit['image_product'];
+                if ($images_2 == '' ) 
+                    $images_2 = $data_product_edit['images_2'];
+                if ($images_3 == '' ) 
+                    $images_3 = $data_product_edit['images_3'];
+                if ($images_4 == '' ) 
+                    $images_4 = $data_product_edit['images_4'];
 
+                if ($name_product != '' && $id_category != '' && $quantity_product != '' && $old_price_product != '' && $new_price_product != '') {
                     $target_dir = "../view/images/product/";
-
                     $target_file = $target_dir . basename($_FILES["image_product"]["name"]);
                     $target_file2 = $target_dir . basename($_FILES["images_2"]["name"]);
                     $target_file3 = $target_dir . basename($_FILES["images_3"]["name"]);
@@ -102,19 +122,15 @@
                     if ($image_product != '' && $images_2 != '' && $images_3 != '' && $images_4 != '') {
                         $sql = "UPDATE product SET id_category ='$id_category',quantity_product='$quantity_product',name_product='$name_product',image_product='$image_product',old_price_product='$old_price_product',new_price_product='$new_price_product',info_product='$info_product',
                         images_2='$images_2',images_3='$images_3',images_4='$images_4',screen='$screen',type='$type',front_camera='$front_camera',rear_camera='$rear_camera',cpu='$cpu',ram='$ram',rom='$rom',sdcard='$sdcard',battery='$battery' WHERE id_product = '$id_product'";
-
                         if (execute($sql)) {
                             $thongbao = "<h6 style='color: green;'>Sửa thành công</h6>";
-                            header('location: ?controller=product');
                         } else {
                             $error = "<h6 style='color: green;'>Sửa thất bại</h6>";
                         }
                     } else {
                         $sql = "UPDATE product SET id_category='$id_category',quantity_product='$quantity_product',name_product='$name_product',old_price_product='$old_price_product',new_price_product='$new_price_product',screen='$screen',type='$type',front_camera='$front_camera',rear_camera='$rear_camera',cpu='$cpu',ram='$ram',rom='$rom',sdcard='$sdcard',battery='$battery',info_product='$info_product' WHERE id_product = '$id_product'";
-
                         if (execute($sql)) {
                             $thongbao = "<h6 style='color: green;'>Sửa thành công</h6>";
-                            header('location: ?controller=product');
                         } else {
                             $error = "<h6 style='color: green;'>Sửa thất bại</h6>";
                         }
@@ -123,13 +139,7 @@
                     $error = "<h6 style='color: red; font-size='16px'>Không được để rỗng !</h6>";
                 }
             }
-            if (isset($_GET['id_product'])) {
-                $id_product = $_GET['id_product'];
-                $sql = "SELECT * FROM product WHERE id_product = '$id_product'";
-                $data_product_edit = selectOne($sql);
-                $sql = "SELECT * FROM category";
-                $data_category = selectAll($sql);
-            }
+
             require_once('./view/product/edit_product.php');
             break;
         }

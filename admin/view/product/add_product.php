@@ -26,11 +26,9 @@
                         <?php
                             foreach ($data_category as $category_option) {
                         ?>
-
                         <option value="<?php echo $category_option['id_category'] ?>">
                             <?php echo $category_option['name_category'] ?>
                         </option>
-
                         <?php
                             }
                         ?>

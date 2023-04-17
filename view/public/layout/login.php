@@ -580,7 +580,7 @@
                                         </div>
                                         <div class="col-xs-6 col-sm-6">
                                             <p class="forgotPwd">
-                                                <a class="lnk-toggler" data-panel=".panel-forgot" href="#">Quên mật khẩu ?</a>
+                                                <a class="lnk-toggler" data-panel=".panel-forgot" href="http://localhost/vuxphone/index.php?controller=forgot" name="forgot">Quên mật khẩu ?</a>
                                             </p>
                                         </div>
                                     </div>

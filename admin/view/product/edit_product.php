@@ -3,7 +3,7 @@
 ?>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <h2 style="margin-top: 30px; margin-bottom: 30px;">Sửa Sản Phẩm</h2>
+    <h2 style="margin-top: 30px; margin-bottom: 30px;">Sửa Sản Phẩm<?php ?></h2>
     <?php
         if (isset($error)) {
             echo $error;
@@ -125,9 +125,9 @@
             <div class="col-md-3">
                 <div class="box" style="border: 1px solid #eee;">
                     <div class="form-group" style="padding: 10px;">
-                        <label for="exampleFormControlInput1">Ảnh</label>
+                        <label for="exampleFormControlInput1">Ảnh </label>
                         <input type="file" class="form-control" id="exampleFormControlInput1" name="image_product">
-                        <img src="../view/images/product/<?php echo $data_product_edit['image_product']?>" width="150px">
+                        <img src="../view/images/product/<?php echo $image_product ?>" width="150px">
                     </div>
                 </div>
             </div>
@@ -136,7 +136,7 @@
                     <div class="form-group" style="padding: 10px;">
                         <label for="exampleFormControlInput1">Ảnh</label>
                         <input type="file" class="form-control" id="exampleFormControlInput1" name="images_2">
-                        <img src="../view/images/product/<?php echo $data_product_edit['images_2']?>" width="150px">
+                        <img src="../view/images/product/<?php echo $images_2 ?>" width="150px">
                     </div>
                 </div>
             </div>
@@ -145,16 +145,16 @@
                     <div class="form-group" style="padding: 10px;">
                         <label for="exampleFormControlInput1">Ảnh</label>
                         <input type="file" class="form-control" id="exampleFormControlInput1" name="images_3">
-                        <img src="../view/images/product/<?php echo $data_product_edit['images_3']?>" width="150px">
+                        <img src="../view/images/product/<?php echo $images_3 ?>" width="150px">
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="box" style="border: 1px solid #eee;">
                     <div class="form-group" style="padding: 10px;">
-                        <label for="exampleFormControlInput1">Ảnh</label>
+                        <label for="exampleFormControlInput1">Ảnh <?php echo $images_4 ?></label>
                         <input type="file" class="form-control" id="exampleFormControlInput1" name="images_4">
-                        <img src="../view/images/product/<?php echo $data_product_edit['images_4']?>" width="150px">
+                        <img src="../view/images/product/<?php echo $images_4 ?>" width="150px">
                     </div>
                 </div>
             </div>

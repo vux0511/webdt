@@ -1,7 +1,7 @@
 <?php
 
     include "model/DBconfig.php";
-
+    $$email_forgot = "";
     session_start();
 
     if (!isset($_SESSION['my_cart'])) $_SESSION['my_cart']=[];
@@ -48,8 +48,16 @@
             require_once ('controller/LoginController.php');
             break;
         }
+        case 'forgot': {
+            require_once ('controller/ForgotController.php');
+            break;
+        }
         case 'register': {
             require_once ('controller/RegisterController.php');
+            break;
+        }
+        case 'resetpass': {
+            require_once ('controller/ResetPassController.php');
             break;
         }
         case 'logout': {
