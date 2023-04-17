@@ -563,8 +563,10 @@
                                         echo $thongbao;
                                     }
                                 ?>
+                                
                             </div>
                             <div class="row">
+                                <p style="font-size:15px; color:green">Vui lòng nhập lại mật khẩu mới!</p>
                                 <div class="col-xs-12 col-sm-12">
                                     <form name="loginForm" class="loginForm" method="POST">
                                         <div class="form-group">

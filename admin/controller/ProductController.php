@@ -5,6 +5,7 @@
     } else {
         $act = '';
     }
+    $thongbaoxoa = "";
 
     $thongbao = '';
     $error = '';
@@ -149,6 +150,10 @@
 
                 $sql = "DELETE FROM product WHERE id_product = $id_product";
                 if (execute($sql)) {
+                    $thongbaoxoa = "<p>Xoá thành công</p>";
+                    ?>
+                    <script>alert("Đã xoá thành công!")</script>
+                    <?php
                     header('location: ?controller=product');
                 } else {
                     $thongbao = "<h6 style='color: green;'>Xóa thất bại</h6>";
@@ -166,6 +171,7 @@
             break;
         }
         default: {
+            if(isset($thongbaoxoa)) {echo $thongbaoxoa;}
             // Lấy SELECT OPTION CATEGORY cho View
             $sql = "SELECT * FROM category";
             $data_category_option = selectAll($sql);

@@ -571,6 +571,16 @@
                                             <input type="text" class="form-control email" name="email_forgot" placeholder="Nhập Email ...">
                                         </div>
                                         <div class="form-group">
+                                            <?php
+                                                if($error1) { ?>
+                                                    <p style="color:red; font-size:15px"><?php echo $error1; ?></p>
+                                                <?php }
+                                            ?>
+                                            <?php
+                                                if($success1) { ?>
+                                                    <p style="color:green; font-size:15px"><?php echo $success1; ?></p>
+                                                <?php }
+                                            ?>
                                             <button class="btn btn-lg btn-primary btn-block" name="sendCode">Gửi Mã</button>
                                         </div>
                                     </form>
@@ -579,9 +589,11 @@
                                             <input type="text" class="form-control email" name="code" placeholder="Nhập mã...">
                                         </div>
                                         <div class="form-group">
-                                            <p><?php if($error) {
-                                                echo $error;
-                                            } ?></p>
+                                            <?php
+                                                if($error) { ?>
+                                                    <p style="color:red; font-size:15px"><?php echo $error; ?></p>
+                                                <?php }
+                                            ?>
                                             <button class="btn btn-lg btn-primary btn-block" name="verifyCode">Xác Minh</button>
                                         </div>
                                     </form>

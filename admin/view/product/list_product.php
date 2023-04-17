@@ -18,7 +18,7 @@
                 <thead class="thead-light">
                     <tr>
                         <th class="id_product">#</th>
-                        <th class="name_product">Tên Danh Mục</th>
+                        <th class="name_product">Tên Danh Mục <?php if(isset($thongbaoxoa)) {echo $thongbaoxoa;}  ?></th>
                         <th class="name_category">Danh Mục</th>
                         <th class="image_product">Ảnh</th>
                         <th class="hot_product">SP HOT</th>

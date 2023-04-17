@@ -571,11 +571,16 @@
                                 <div class="col-xs-12 col-sm-12">
                                     <form name="loginForm" class="loginForm" method="POST">
                                         <div class="form-group">
-                                            <input type="text" class="form-control email" name="user" placeholder="Tài khoản">
+                                            <input type="text" class="form-control email" name="user" placeholder="Nhập tài khoản">
                                         </div>
                                         <div class="form-group">
                                             <div class="pwdMask">
-                                                <input type="password" class="form-control password" name="password" placeholder="Mật khẩu ">
+                                                <input type="password" class="form-control password" name="password" placeholder="Nhập mật khẩu ">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="pwdMask">
+                                                <input type="password" class="form-control password" name="re_password" placeholder="Nhập lại mật khẩu ">
                                             </div>
                                         </div>
                                         <div class="form-group">
